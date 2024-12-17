@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar Example</title>
+  <style>
+  
+    body, h1, p {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+   
+    .navbar {
+      display: flex;
+      background-color: #f8f9fa;
+      padding: 1rem 2rem;
+    }
+
+    .navbar a {
+      color: #333; 
+      text-decoration: none;
+      margin-right: 35px;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .navbar a:hover {
+      color: #007bff; 
+      text-decoration: solid;
+    }
+
+  
+    .information {
+      background-color: #004080;
+      color: #fff;
+      padding:100px 30px;
+      text-align: center;
+    }
+
+    .information h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .information p {
+      margin-bottom:35px;
+    }
+
+    .apply-btn {
+      display: inline-block;
+      background-color: #ffb703; 
+      color: #333;
+      padding: 17px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .apply-btn:hover {
+      background-color: #e09e00;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem;
+      min-width: 600px;
+      display: flex;
+      justify-content: space-between;
+      border-top: 3px solid #007bff;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
+    
+    .dropdown-content .column {
+      margin-right: 2rem;
+    }
+
+    .dropdown-content h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: #555;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    .dropdown.show.dropdown-content{
+      display:flex;
+    }
+    .image-container{
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+<div class="navbar">
+  <div class="dropdown">
+    <a id="saving" href="#">Savings</a>
+    <div class="dropdown-content">
+      <div class="column">
+        <h3>Saving Acoounts</h3>
+        <h3>Deposites</h3>
+        <h3>Current account</h3>
+        <h3>Card</h3>
+        <h3>Loans</h3>
+        <h3>Elite Banking</h3>
+      </div>
+
+      <div class="column">
+        <h3>Investments</h3>
+        <a href="#">Regular saving account</a>
+        <a href="#">Deluxe saving account</a>
+        <a href="#">Super saving account</a>
+        <a href="#">family saving account</a>
+      </div>
+
+      <div class="column">
+        <h3>Fixed deposite</h3>
+        <a href="#">Saving Account</a>
+        <a href="#">Deposites</a>  
+      </div>
+
+      <div class="column">
+        <h3>Main Account</h3>
+        <a href="#">Saving Account</a>  
+        <a href="#">Deposites</a>  
+        <a href="#">Current Account</a>  
+        <a href="#">New Account</a>  
+      </div>
+   </div>
+  </div>
+    <a href="#">International</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact Us</a>
+</div>
+  <div class="information">
+    <h1>Regular Savings</h1>
+    <p>We offer you a variety of Savings Accounts to choose from. Based on your needs, our savings account helps you save while you earn.</p>
+    <a href="#" class="apply-btn">Apply Now</a>
+    <div class="image-container">
+      <img src="C:\Users\panka\Desktop\task\phone.jpg" alt="C:\Users\panka\Desktop\task\img.png" width="300px" height="200px">
+    </div>
+  </div>
+  
+
+  <script>
+    const savingLinks = document.getElementById("saving");
+    const dropdown = savingLinks.parentElement;
+    savingLinks.addEventListener("click",function(event)
+    {
+      event.preventDefault();
+      dropdown.classList.toggle("show");
+    });
+    window.addEventListener("click", function(event) {
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove("show");
+      }
+    });
+  </script>
+</body>
+</html>
